@@ -10,6 +10,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
+
+// Other plugins.
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 version = '0.0.1'
@@ -172,6 +175,51 @@ publishing {
     repositories {
         maven {
             url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+/**
+ * Add sources jar for publishing to local maven repo.
+ * {...}-sources.jar
+ */
+task sourcesJar(type: Jar) {
+    from sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+/**
+ * Add sourcesJar as artifact.
+ */
+artifacts {
+    archives sourcesJar
+}
+
+/**
+ * Upload jars to local repository.
+ */
+task("uploadJars", dependsOn: "build") {
+    // Set description.
+    description = "uploads JARs"
+
+    // Has local or sftp maven property.
+    if (project.hasProperty("local_maven") || project.hasProperty("sftp_maven")) {
+        // Apply plugins.
+        apply plugin: 'maven'
+
+        // Upload archives.
+        uploadArchives {
+            // Repositories.
+            repositories {
+                // Has local maven property.
+                if (project.hasProperty("local_maven")) {
+                    // Maven deployer for local repos.
+                    mavenDeployer {
+                        // Local maven repository url (in local filesystem).
+                        repository(url: "file://${local_maven}")
+                    }
+                }
+            }
         }
     }
 }

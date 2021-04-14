@@ -22,7 +22,9 @@ archivesBaseName = 'multicore_lib'
 def projectsDir = projectDir.parentFile;
 def projectsUrlDir = projectsDir.getPath().replaceAll("\\\\", "/")
 
-def local_maven = "file://${projectsUrlDir}"
+def local_maven = "file://${projectsUrlDir}/MultiTeam-Maven"
+
+println(local_maven)
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 

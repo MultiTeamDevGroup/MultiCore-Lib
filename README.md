@@ -29,6 +29,6 @@ maven {
 ```
 2. Then add the dependency: *Replace `<version>` with the mod's version*
 ```gradle
-compile "multiteam.multicorelib:multicore_lib:<version>"
+compile fg.deobf("multiteam.multicorelib:multicore_lib:<version>")
 ```
 3. Synchronize the project. In Intelij IDEA you use the sync button from the gradle menu. Or in `cmd.exe` run `gradlew.bat`. Or if you're using linux: `./gradlew`.

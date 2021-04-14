@@ -7,6 +7,7 @@ MultiCoreLib is a library mod for several tools and utils, used by most multitea
 
 ## Credits
 - LazTheArtist [TeleportTool - HoverTextItemTool]
+- Qboi [Maven Setup]
 
 
 ## Community

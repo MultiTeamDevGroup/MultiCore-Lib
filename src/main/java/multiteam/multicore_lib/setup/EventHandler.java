@@ -17,6 +17,7 @@ import java.util.List;
 
 @Mod.EventBusSubscriber(modid = MultiCoreLib.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
+
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public static void renderTooltip(RenderTooltipEvent.PostText event) {
@@ -26,7 +27,6 @@ public class EventHandler {
         RenderSystem.translatef(event.getX(), event.getY() + 12, 500);
         RenderSystem.scalef(0.5f, 0.5f, 1.0f);
         Minecraft mc = Minecraft.getInstance();
-        List<? extends ITextProperties> tooltip = event.getLines();
 
         CompoundNBT nbtTagCompound = stack.getTag();
 

@@ -27,7 +27,7 @@ maven {
     url "https://github.com/MultiTeamDevGroup/MultiTeam-Maven/raw/main/"
 }
 ```
-2. Then add the dependency: *Replace `<version>` with the mod's version*
+2. Then add the dependency: *Replace `<version>` with the mod's version* - you can find the versions [[here]](https://github.com/MultiTeamDevGroup/MultiTeam-Maven/tree/main/multiteam/multicorelib/multicore_lib)
 ```gradle
 compile fg.deobf("multiteam.multicorelib:multicore_lib:<version>")
 ```

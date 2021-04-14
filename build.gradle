@@ -19,10 +19,10 @@ version = '0.0.1'
 group = 'multiteam.multicorelib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'multicore_lib'
 
-projectsDir = projectDir.parentFile;
-projectsUrlDir = projectsDir.getPath().replaceAll("\\\\", "/")
+def projectsDir = projectDir.parentFile;
+def projectsUrlDir = projectsDir.getPath().replaceAll("\\\\", "/")
 
-local_maven = "file://${projectsUrlDir}"
+def local_maven = "file://${projectsUrlDir}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 

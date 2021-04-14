@@ -19,6 +19,11 @@ version = '0.0.1'
 group = 'multiteam.multicorelib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'multicore_lib'
 
+projectsDir = projectDir.parentFile;
+projectsUrlDir = projectsDir.getPath().replaceAll("\\\\", "/")
+
+local_maven = "file://${projectsUrlDir}"
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
@@ -202,23 +207,17 @@ task("uploadJars", dependsOn: "build") {
     // Set description.
     description = "uploads JARs"
 
-    // Has local or sftp maven property.
-    if (project.hasProperty("local_maven") || project.hasProperty("sftp_maven")) {
-        // Apply plugins.
-        apply plugin: 'maven'
+    // Apply plugins.
+    apply plugin: 'maven'
 
-        // Upload archives.
-        uploadArchives {
-            // Repositories.
-            repositories {
-                // Has local maven property.
-                if (project.hasProperty("local_maven")) {
-                    // Maven deployer for local repos.
-                    mavenDeployer {
-                        // Local maven repository url (in local filesystem).
-                        repository(url: "file://${local_maven}")
-                    }
-                }
+    // Upload archives.
+    uploadArchives {
+        // Repositories.
+        repositories {
+            // Maven deployer for local repos.
+            mavenDeployer {
+                // Local maven repository url (in local filesystem).
+                repository(url: local_maven)
             }
         }
     }

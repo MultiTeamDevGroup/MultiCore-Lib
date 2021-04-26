@@ -26,8 +26,8 @@ public class MathF { //Why MathF? Because in unity, there was a class with Mathe
     /**
      * Does the same as above except with a Vector3f
      **/
-    public static Vector3f BlockToFloatScaleVector3f(Vector3f BlockScaledVector){
-        return new Vector3f(BlockToFloatScale(BlockScaledVector.x()),BlockToFloatScale(BlockScaledVector.y()),BlockToFloatScale(BlockScaledVector.z()));
+    public static Vector3f BlockToFloatScaleVector3f(float x, float y, float z){
+        return new Vector3f(BlockToFloatScale(x),BlockToFloatScale(y),BlockToFloatScale(z));
     }
 
 }

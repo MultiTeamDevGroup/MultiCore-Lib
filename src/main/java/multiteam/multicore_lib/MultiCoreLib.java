@@ -39,7 +39,6 @@ public class MultiCoreLib
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-
     }
 
     private void processIMC(final InterModProcessEvent event) {

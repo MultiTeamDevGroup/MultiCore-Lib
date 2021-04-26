@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-0.0.1.2'
+version = '1.16.5-0.0.1.3'
 group = 'multiteam.multicorelib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'multicore_lib'
 

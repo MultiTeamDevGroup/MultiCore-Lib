@@ -1,0 +1,34 @@
+package multiteam.multicore_lib.setup.utilities;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
+
+public class RegistrationTool {
+
+    //Registers a block without an item form
+    public static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block, DeferredRegister<Block> BLOCKS_){
+        return BLOCKS_.register(name, block);
+    }
+
+    //Registers a block, and also registers an item version of the block
+    public static <T extends Block> RegistryObject<T> registerWithItem(String name, Supplier<T> block, Item.Properties itemProperties, DeferredRegister<Block> BLOCKS_, DeferredRegister<Item> ITEMS_){
+        RegistryObject<T> ret = registerNoItem(name, block, BLOCKS_);
+        ITEMS_.register(name, () -> new BlockItem(ret.get(), itemProperties));
+        return ret;
+    }
+
+    //Entity registry util
+    public static <T extends Entity> RegistryObject<EntityType<T>> buildEntity(EntityType.IFactory<T> entity, Class<T> entityClass, float width, float height, EntityClassification classification, int trackingRange, int updateinterval, DeferredRegister<EntityType<?>> ENTITIES_) {
+        String name = entityClass.getSimpleName().toLowerCase();
+        return ENTITIES_.register(name, () -> EntityType.Builder.of(entity, classification).sized(width, height).clientTrackingRange(trackingRange).updateInterval(updateinterval).build(name));
+    }
+
+}

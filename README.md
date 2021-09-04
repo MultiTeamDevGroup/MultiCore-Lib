@@ -6,7 +6,7 @@
 MultiCoreLib is a library mod for several tools and utils, used by most multiteam mods.
 
 ## Credits
-- LazTheArtist [TeleportTool - HoverTextItemTool]
+- LazTheArtist [HoverTextItemTool - ItemGroupTool - ItemManagementTool - MathF - RegistrationTool - TeleportTool]
 - Qboi [Maven Setup]
   
 ## Community

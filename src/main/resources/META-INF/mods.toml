@@ -36,7 +36,7 @@ authors="LazTheArtist" #optional
 description='''
 This mod is a Library, for tools and helpers, to make coding mods faster and easier.
 
-LazTheArtist [HoverTextItemTool - TeleportTool - ItemGroupTool - MathF]
+LazTheArtist [HoverTextItemTool - ItemGroupTool - ItemManagementTool - MathF - RegistrationTool - TeleportTool]
 Qboi [Maven Setup]
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

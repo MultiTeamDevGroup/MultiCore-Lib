@@ -16,7 +16,7 @@ If you want to be part of our community, join the discord server!
 ## How to publish to a local maven: ()
 :warning:**Note:** *This doesn't upload to web.*:warning:  
 **Note:** *You need to push the changes of the maven repo to github*
-1. Run  `gradlew build jar uploadArchives`  
+1. Run  `gradlew build publish`  
 
 ## How to add the MultiCore Lib Mod as dependency to your mod.
 1. Add the code below to the `build.gradle` in the repositories of the mod that uses the library:  

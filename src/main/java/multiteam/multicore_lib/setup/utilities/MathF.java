@@ -1,6 +1,6 @@
 package multiteam.multicore_lib.setup.utilities;
 
-import net.minecraft.util.math.vector.Vector3f;
+import com.mojang.math.Vector3f;
 
 public class MathF { //Why MathF? Because in unity, there was a class with Mathematical functions, and i grown quiet fond of this name. In the honor of my C# past, you shall now be named MathF!
 

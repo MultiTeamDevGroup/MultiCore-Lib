@@ -3,17 +3,14 @@ package multiteam.multicore_lib.setup;
 import com.mojang.blaze3d.systems.RenderSystem;
 import multiteam.multicore_lib.MultiCoreLib;
 import net.minecraft.client.Minecraft;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.ITextProperties;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.List;
 
 @Mod.EventBusSubscriber(modid = MultiCoreLib.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
@@ -28,7 +25,7 @@ public class EventHandler {
         RenderSystem.scalef(0.5f, 0.5f, 1.0f);
         Minecraft mc = Minecraft.getInstance();
 
-        CompoundNBT nbtTagCompound = stack.getTag();
+        CompoundTag nbtTagCompound = stack.getTag();
 
         if(nbtTagCompound != null){
 
@@ -58,7 +55,7 @@ public class EventHandler {
 
                 for (int i = 0; i < itemsToRender.length; i++){
                     ItemStack displayStack = new ItemStack(itemsToRender[i]);
-                    if(displayStack != null){
+                    if(displayStack != null){ // Fixme: displayStack will never be null.
                         mc.getItemRenderer().renderGuiItem(displayStack, i * 17, nbtTagCompound.getInt("lineToRender") + 20);
                     }
                 }

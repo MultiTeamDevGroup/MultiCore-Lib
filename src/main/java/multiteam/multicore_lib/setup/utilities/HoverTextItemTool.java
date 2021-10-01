@@ -1,15 +1,15 @@
 package multiteam.multicore_lib.setup.utilities;
 
-import net.minecraft.item.Item;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.BaseComponent;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Item;
 
 import java.util.List;
 
 public class HoverTextItemTool {
-    public static void putItems(List<ITextComponent> tooltip, CompoundNBT nbtTagCompound, Item[] itemsToRender){
-        tooltip.add(new StringTextComponent(" "));
+    public static void putItems(List<BaseComponent> tooltip, CompoundTag nbtTagCompound, Item[] itemsToRender){
+        tooltip.add(new TextComponent(" "));
         nbtTagCompound.putBoolean("hasTooltipItem", true);
         int[] itemIdsToRender = new int[itemsToRender.length];
         for (int i = 0; i < itemIdsToRender.length; i++){
@@ -19,20 +19,20 @@ public class HoverTextItemTool {
         nbtTagCompound.putInt("lineToRender", tooltip.size());
     }
 
-    public static void putItem(List<ITextComponent> tooltip, CompoundNBT nbtTagCompound, Item itemToRender){
-        tooltip.add(new StringTextComponent(" "));
+    public static void putItem(List<BaseComponent> tooltip, CompoundTag nbtTagCompound, Item itemToRender){
+        tooltip.add(new TextComponent(" "));
         nbtTagCompound.putBoolean("hasTooltipItem", true);
         int[] itemIdsToRender = {Item.getId(itemToRender)};
         nbtTagCompound.putIntArray("itemsToRender", itemIdsToRender);
         nbtTagCompound.putInt("lineToRender", tooltip.size());
     }
 
-    public static void displayItemBar(List<ITextComponent> tooltip, CompoundNBT nbtTagCompound, Item barItem, Item barItemEmpty, int barLenght, int barFillAmount){
+    public static void displayItemBar(List<BaseComponent> tooltip, CompoundTag nbtTagCompound, Item barItem, Item barItemEmpty, int barLenght, int barFillAmount){
         String spacer = " ";
         for (int i = 0; i < barLenght * 5; i++){
-            spacer+=" ";
+            spacer+=" "; // Fixme: should be optimized.
         }
-        tooltip.add(new StringTextComponent(spacer));
+        tooltip.add(new TextComponent(spacer));
         nbtTagCompound.putBoolean("hasItemBar", true);
         nbtTagCompound.putInt("barLenght", barLenght);
         nbtTagCompound.putInt("barFillAmountDisplay", barFillAmount);

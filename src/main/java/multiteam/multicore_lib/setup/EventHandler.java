@@ -1,6 +1,6 @@
 package multiteam.multicore_lib.setup;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import multiteam.multicore_lib.MultiCoreLib;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
@@ -20,9 +20,10 @@ public class EventHandler {
     public static void renderTooltip(RenderTooltipEvent.PostText event) {
         ItemStack stack = event.getStack();
 
-        RenderSystem.pushMatrix();
-        RenderSystem.translatef(event.getX(), event.getY() + 12, 500);
-        RenderSystem.scalef(0.5f, 0.5f, 1.0f);
+        PoseStack matrixStack = event.getMatrixStack();
+        matrixStack.pushPose();
+        matrixStack.translate(event.getX(), event.getY() + 12, 500);
+        matrixStack.scale(0.5f, 0.5f, 1.0f);
         Minecraft mc = Minecraft.getInstance();
 
         CompoundTag nbtTagCompound = stack.getTag();
@@ -32,16 +33,14 @@ public class EventHandler {
             if(nbtTagCompound.getBoolean("hasTooltipItem")){
                 for (int i = 0; i < nbtTagCompound.getIntArray("itemsToRender").length; i++){
                     ItemStack displayStack = new ItemStack(Item.byId(nbtTagCompound.getIntArray("itemsToRender")[i]));
-                    if(displayStack != null){
-                        mc.getItemRenderer().renderGuiItem(displayStack, i * 17, nbtTagCompound.getInt("lineToRender") + 20);
-                    }
+                    mc.getItemRenderer().renderGuiItem(displayStack, i * 17, nbtTagCompound.getInt("lineToRender") + 20);
                 }
             }
 
             if(nbtTagCompound.getBoolean("hasItemBar")){
-                int barLength = nbtTagCompound.getInt("barLenght");
+                int barLength = nbtTagCompound.getInt("barLenght"); // Fixme: barLenght is misspelled: should be barLength (t and h are mixed)
                 int barFillAmount = nbtTagCompound.getInt("barFillAmountDisplay");
-                Item[] itemsToRender = new Item[nbtTagCompound.getInt("barLenght")];
+                Item[] itemsToRender = new Item[nbtTagCompound.getInt("barLenght")]; // Fixme: barLenght is misspelled: should be barLength (t and h are mixed)
 
                 for (int i = 0; i < barLength; i++) {
                     if(barFillAmount == 0){
@@ -55,14 +54,12 @@ public class EventHandler {
 
                 for (int i = 0; i < itemsToRender.length; i++){
                     ItemStack displayStack = new ItemStack(itemsToRender[i]);
-                    if(displayStack != null){ // Fixme: displayStack will never be null.
-                        mc.getItemRenderer().renderGuiItem(displayStack, i * 17, nbtTagCompound.getInt("lineToRender") + 20);
-                    }
+                    mc.getItemRenderer().renderGuiItem(displayStack, i * 17, nbtTagCompound.getInt("lineToRender") + 20);
                 }
             }
 
         }
 
-        RenderSystem.popMatrix();
+        matrixStack.popPose();
     }
 }

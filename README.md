@@ -25,8 +25,9 @@ maven {
     url "https://github.com/MultiTeamDevGroup/MultiTeam-Maven/raw/main/"
 }
 ```
-2. Then add the dependency: *Replace `<version>` with the mod's version* - you can find the versions [[here]](https://github.com/MultiTeamDevGroup/MultiTeam-Maven/tree/main/multiteam/multicorelib/multicore_lib)
+2. Then add the dependency: *Replace `<mc_version>` with the minecraft version you're using; Replace `<lib_version>` with the version of the mod you'd like to use* - you can find the versions [[here]](https://github.com/MultiTeamDevGroup/MultiTeam-Maven/tree/main/multiteam/multicorelib/MultiCore-Lib)
 ```gradle
-compile fg.deobf("multiteam.multicorelib:multicore_lib:<version>")
+runtimeOnly fg.deobf("multiteam.multicorelib:MultiCore-Lib:<mc_version>-<lib_version>")
+compileOnly fg.deobf("multiteam.multicorelib:MultiCore-Lib:<mc_version>-<lib_version>")
 ```
 3. Synchronize the project. In Intelij IDEA you use the sync button from the gradle menu. Or in `cmd.exe` run `gradlew.bat`. Or if you're using linux: `./gradlew`.

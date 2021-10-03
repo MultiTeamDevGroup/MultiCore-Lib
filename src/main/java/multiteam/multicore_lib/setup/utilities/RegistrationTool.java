@@ -31,4 +31,8 @@ public class RegistrationTool {
         return ENTITIES_.register(name, () -> EntityType.Builder.of(entity, classification).sized(width, height).clientTrackingRange(trackingRange).updateInterval(updateinterval).build(name));
     }
 
+    //Better version of the Entity registry util. uses a string as id instead of the name of the provided entity class
+    public static <T extends Entity> RegistryObject<EntityType<T>> buildEntityV2(String name, EntityType.EntityFactory<T> entity, float width, float height, MobCategory classification, int trackingRange, int updateinterval, DeferredRegister<EntityType<?>> ENTITIES_) {
+        return ENTITIES_.register(name, () -> EntityType.Builder.of(entity, classification).sized(width, height).clientTrackingRange(trackingRange).updateInterval(updateinterval).build(name));
+    }
 }

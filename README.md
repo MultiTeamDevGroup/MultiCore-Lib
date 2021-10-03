@@ -1,6 +1,6 @@
 
 ![Arcadia Logo](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/main/src/main/resources/multicore_lib_logo.png)
-### for Forge 1.16.5 - by MultiTeam
+### for Forge 1.17.1 - by MultiTeam
 
 ## About
 MultiCoreLib is a library mod for several tools and utils, used by most multiteam mods.
@@ -13,7 +13,7 @@ MultiCoreLib is a library mod for several tools and utils, used by most multitea
 If you want to be part of our community, join the discord server!
 [[Discord Invite Link]](https://discord.gg/rudHdrJ)
 
-## How to publish to a local maven: ()
+## How to publish to a local maven:
 :warning:**Note:** *This doesn't upload to web.*:warning:  
 **Note:** *You need to push the changes of the maven repo to github*
 1. Run  `gradlew build publish`  

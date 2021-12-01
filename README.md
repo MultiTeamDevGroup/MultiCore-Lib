@@ -1,6 +1,6 @@
 
 ![Arcadia Logo](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/main/src/main/resources/multicore_lib_logo.png)
-### for Forge 1.17.1 - by MultiTeam
+### for Forge 1.18 - by MultiTeam
 
 ## About
 MultiCoreLib is a library mod for several tools and utils, used by most multiteam mods.

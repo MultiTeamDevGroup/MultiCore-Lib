@@ -17,10 +17,10 @@ public class EventHandler {
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
-    public static void renderTooltip(RenderTooltipEvent.PostText event) {
-        ItemStack stack = event.getStack();
+    public static void renderTooltip(RenderTooltipEvent.Color event) {
+        ItemStack stack = event.getItemStack();
 
-        PoseStack matrixStack = event.getMatrixStack();
+        PoseStack matrixStack = event.getPoseStack();
         matrixStack.pushPose();
         matrixStack.translate(event.getX(), event.getY() + 12, 500);
         matrixStack.scale(0.5f, 0.5f, 1.0f);

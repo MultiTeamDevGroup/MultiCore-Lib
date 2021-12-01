@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.17.1-0.1.2.1'
+version = '1.17.1-0.2.2.1' // alpha=0/beta=1/release=2.increases when mc major version increases.increases if there are new tools or code basically.patch
 group = 'multiteam.multicorelib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'multicore_lib'
 
@@ -24,14 +24,14 @@ def local_maven = "file://${projectsUrlDir}/MultiTeam-Maven"
 
 println(local_maven)
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16) // Mojang ships Java 8 to end users, so your mod should target Java 8.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java : ' + System.getProperty('java.version'))
 println(' JVM : ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ')')
 println(' Arch: ' + System.getProperty('os.arch'))
 
 minecraft {
-    mappings channel: 'official', version: '1.17.1'
+    mappings channel: 'official', version: '1.18'
 
     runs {
         client {
@@ -88,7 +88,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation 'org.jetbrains:annotations:20.1.0'
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.71'
+    minecraft 'net.minecraftforge:forge:1.18-38.0.5'
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -2,13 +2,26 @@ package multiteam.multicore_lib.setup.utilities.render;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.BaseComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
 
 public class HoverTextItemTool {
-    public static void putItems(List<BaseComponent> tooltip, CompoundTag nbtTagCompound, Item[] itemsToRender){
+
+    public static void baseSetup(CompoundTag tag, ItemStack stack){
+        if(tag == null){
+            tag = new CompoundTag();
+            stack.setTag(tag);
+        }else if(!tag.getBoolean("hasTooltipItem")){
+            tag.putBoolean("hasTooltipItem", true);
+            stack.setTag(tag);
+        }
+    }
+
+    public static void putItems(List<Component> tooltip, CompoundTag nbtTagCompound, Item[] itemsToRender){
         tooltip.add(new TextComponent(" "));
         nbtTagCompound.putBoolean("hasTooltipItem", true);
         int[] itemIdsToRender = new int[itemsToRender.length];
@@ -19,7 +32,7 @@ public class HoverTextItemTool {
         nbtTagCompound.putInt("lineToRender", tooltip.size());
     }
 
-    public static void putItem(List<BaseComponent> tooltip, CompoundTag nbtTagCompound, Item itemToRender){
+    public static void putItem(List<Component> tooltip, CompoundTag nbtTagCompound, Item itemToRender){
         tooltip.add(new TextComponent(" "));
         nbtTagCompound.putBoolean("hasTooltipItem", true);
         int[] itemIdsToRender = {Item.getId(itemToRender)};

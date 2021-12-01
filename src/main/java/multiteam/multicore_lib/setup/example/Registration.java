@@ -1,8 +1,8 @@
 package multiteam.multicore_lib.setup.example;
 
 import multiteam.multicore_lib.MultiCoreLib;
-import multiteam.multicore_lib.setup.example.main.block.ExampleModItems;
-import multiteam.multicore_lib.setup.example.main.item.ExampleModBlocks;
+import multiteam.multicore_lib.setup.example.main.item.ExampleModItems;
+import multiteam.multicore_lib.setup.example.main.block.ExampleModBlocks;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;

@@ -36,8 +36,8 @@ public class ItemModelGenerator extends ItemModelProvider {
      * -"base_block_id" the string id of your base block. this one also gets generated alongside the slab and stair
      */
 
-    private ItemModelBuilder flatItem(ModelFile itemGenerated, String name) {
-        return getBuilder(name).parent(itemGenerated).texture("layer0", "item/"+name);
+    public ItemModelBuilder flatItem(String name) {
+        return getBuilder(name).parent(getItemGenerated()).texture("layer0", "item/"+name);
     }
 
     public void blockItem(String block){

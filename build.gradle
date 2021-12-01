@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.17.1-0.2.2.1' // alpha=0/beta=1/release=2.increases when mc major version increases.increases if there are new tools or code basically.patch
+version = '1.18-0.2.2.1' // alpha=0/beta=1/release=2.increases when mc major version increases.increases if there are new tools or code basically.patch
 group = 'multiteam.multicorelib' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'multicore_lib'
 

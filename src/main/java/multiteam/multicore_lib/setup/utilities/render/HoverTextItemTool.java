@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities;
+package multiteam.multicore_lib.setup.utilities.render;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.BaseComponent;
@@ -34,7 +34,7 @@ public class HoverTextItemTool {
         }
         tooltip.add(new TextComponent(spacer));
         nbtTagCompound.putBoolean("hasItemBar", true);
-        nbtTagCompound.putInt("barLenght", barLenght);
+        nbtTagCompound.putInt("barLength", barLenght);
         nbtTagCompound.putInt("barFillAmountDisplay", barFillAmount);
         nbtTagCompound.putInt("barItem", Item.getId(barItem));
         nbtTagCompound.putInt("barItemEmpty", Item.getId(barItemEmpty));

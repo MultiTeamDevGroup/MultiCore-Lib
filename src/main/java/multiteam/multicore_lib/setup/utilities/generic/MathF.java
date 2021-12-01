@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities;
+package multiteam.multicore_lib.setup.utilities.generic;
 
 import com.mojang.math.Vector3f;
 

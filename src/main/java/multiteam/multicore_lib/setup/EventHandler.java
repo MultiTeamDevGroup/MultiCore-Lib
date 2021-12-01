@@ -38,9 +38,9 @@ public class EventHandler {
             }
 
             if(nbtTagCompound.getBoolean("hasItemBar")){
-                int barLength = nbtTagCompound.getInt("barLenght"); // Fixme: barLenght is misspelled: should be barLength (t and h are mixed)
+                int barLength = nbtTagCompound.getInt("barLength");
                 int barFillAmount = nbtTagCompound.getInt("barFillAmountDisplay");
-                Item[] itemsToRender = new Item[nbtTagCompound.getInt("barLenght")]; // Fixme: barLenght is misspelled: should be barLength (t and h are mixed)
+                Item[] itemsToRender = new Item[barLength];
 
                 for (int i = 0; i < barLength; i++) {
                     if(barFillAmount == 0){

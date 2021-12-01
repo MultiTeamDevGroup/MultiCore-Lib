@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities;
+package multiteam.multicore_lib.setup.utilities.generic;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

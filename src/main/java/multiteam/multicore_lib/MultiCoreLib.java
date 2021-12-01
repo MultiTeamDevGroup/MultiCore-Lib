@@ -1,5 +1,6 @@
 package multiteam.multicore_lib;
 
+import multiteam.multicore_lib.setup.example.Registration;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -20,6 +21,8 @@ public class MultiCoreLib {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public MultiCoreLib() {
+        Registration.register();
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);

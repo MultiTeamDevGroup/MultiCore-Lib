@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities;
+package multiteam.multicore_lib.setup.utilities.generic;
 
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;

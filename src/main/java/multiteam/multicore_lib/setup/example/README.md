@@ -30,7 +30,7 @@ public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
     return Optional.of(new ItemTooltipComponent(new ItemStack(Items.APPLE)));
 }
 ```
-If you want to add an item tooltip component to an item that is already made (you don't have access to its class), just subscribe to the RenderTooltipEvent.GatherComponents event, and check if the item is the is what you want to modify, and if so just add a new ItemTooltipComponent, like so:
+If you want to add an item tooltip component to an item that is already made (you don't have access to its class), just subscribe to the RenderTooltipEvent.GatherComponents event, and check if the item is what you want to modify, and if so just add a new ItemTooltipComponent, like so:
 ```java
 @SubscribeEvent
 public static void gatherTooltips(RenderTooltipEvent.GatherComponents event) {
@@ -40,9 +40,13 @@ public static void gatherTooltips(RenderTooltipEvent.GatherComponents event) {
 }
 ```
 
-### [TeleportTool](https://github.com/MultiTeamDevGroup/MultiCore-Lib/blob/1.18/src/main/java/multiteam/multicore_lib/setup/example/main/item/HoverTextItemExampleItem.java#L34)
-
-
+### [TeleportTool](https://github.com/MultiTeamDevGroup/MultiCore-Lib/blob/1.18/src/main/java/multiteam/multicore_lib/setup/example/main/item/TeleportToolExample.java#L37)
+You can use this utility tool to teleport the player into another dimension and block position.
+Keep in mind that your destination dimension can in fact be the same as the current dimension.
+The targetPlayer is what you're teleporting. destinationLevel and destinationBlockPos is where you're teleporting this selected player.
+```java
+TeleportTool.teleportPlayerTo(ServerPlayer targetPlayer, ServerLevel destinationLevel, BlockPos destinationBlockPos)
+```
 
 
 ## Examples for DataGen classes

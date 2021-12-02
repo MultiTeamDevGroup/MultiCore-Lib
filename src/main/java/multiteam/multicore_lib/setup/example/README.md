@@ -40,6 +40,7 @@ public static void gatherTooltips(RenderTooltipEvent.GatherComponents event) {
 }
 ```
 
+### [TeleportTool](https://github.com/MultiTeamDevGroup/MultiCore-Lib/blob/1.18/src/main/java/multiteam/multicore_lib/setup/example/main/item/HoverTextItemExampleItem.java#L34)
 
 
 

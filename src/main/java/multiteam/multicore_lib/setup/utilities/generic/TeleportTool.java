@@ -10,13 +10,13 @@ import java.util.function.Function;
 
 public class TeleportTool {
 
-    public static void teleportTo(ServerPlayer entity, ServerLevel destination, BlockPos pos) {
-        entity.changeDimension(destination, new ITeleporter() {
+    public static void teleportPlayerTo(ServerPlayer targetPlayer, ServerLevel destinationLevel, BlockPos destinationBlockPos) {
+        targetPlayer.changeDimension(destinationLevel, new ITeleporter() {
             @Override
-            public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
-                entity = repositionEntity.apply(false);
-                entity.teleportTo(pos.getX(), pos.getY(), pos.getZ());
-                return entity;
+            public Entity placeEntity(Entity targetPlayer, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
+                targetPlayer = repositionEntity.apply(false);
+                targetPlayer.teleportTo(destinationBlockPos.getX(), destinationBlockPos.getY(), destinationBlockPos.getZ());
+                return targetPlayer;
             }
         });
     }

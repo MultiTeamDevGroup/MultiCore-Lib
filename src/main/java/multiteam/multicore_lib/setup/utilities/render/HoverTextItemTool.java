@@ -11,7 +11,8 @@ import java.util.List;
 
 public class HoverTextItemTool {
 
-    public static void baseSetup(CompoundTag tag, ItemStack stack){
+    public static CompoundTag baseSetup(ItemStack stack){
+        CompoundTag tag = stack.getTag();
         if(tag == null){
             tag = new CompoundTag();
             stack.setTag(tag);
@@ -19,17 +20,18 @@ public class HoverTextItemTool {
             tag.putBoolean("hasTooltipItem", true);
             stack.setTag(tag);
         }
+        return tag;
     }
 
-    public static void putItems(List<Component> tooltip, CompoundTag nbtTagCompound, Item[] itemsToRender){
+    public static void putItems(List<Component> tooltip, CompoundTag tag, Item[] itemsToRender){
         tooltip.add(new TextComponent(" "));
-        nbtTagCompound.putBoolean("hasTooltipItem", true);
+        tag.putBoolean("hasTooltipItem", true);
         int[] itemIdsToRender = new int[itemsToRender.length];
         for (int i = 0; i < itemIdsToRender.length; i++){
             itemIdsToRender[i] = Item.getId(itemsToRender[i]);
         }
-        nbtTagCompound.putIntArray("itemsToRender", itemIdsToRender);
-        nbtTagCompound.putInt("lineToRender", tooltip.size());
+        tag.putIntArray("itemsToRender", itemIdsToRender);
+        tag.putInt("lineToRender", tooltip.size());
     }
 
     public static void putItem(List<Component> tooltip, CompoundTag nbtTagCompound, Item itemToRender){

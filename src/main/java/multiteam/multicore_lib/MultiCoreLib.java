@@ -1,7 +1,10 @@
 package multiteam.multicore_lib;
 
 import multiteam.multicore_lib.setup.example.Registration;
+import multiteam.multicore_lib.setup.utilities.render.ClientItemTooltipComponent;
+import multiteam.multicore_lib.setup.utilities.render.ItemTooltipComponent;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -36,7 +39,7 @@ public class MultiCoreLib {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-
+        MinecraftForgeClient.registerTooltipComponentFactory(ItemTooltipComponent.class, ClientItemTooltipComponent::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

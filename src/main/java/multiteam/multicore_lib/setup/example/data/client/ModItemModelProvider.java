@@ -13,9 +13,9 @@ public class ModItemModelProvider extends ItemModelGenerator {
     @Override
     protected void registerModels() {
         //Blockitems
-        blockItem("example_block");
+        //blockItem("example_block");
 
         //Regular Items
-        flatItem("example_item");
+        flatItem("hover_text_item_example");
     }
 }

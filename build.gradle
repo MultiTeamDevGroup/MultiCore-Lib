@@ -69,7 +69,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'arcadia', '--all',
+            args '--mod', 'multicore_lib', '--all',
                     '--existing', file('src/main/resources/'),
                     '-existing', file('src/generated/resources'),
                     '--output', file('src/generated/resources/')

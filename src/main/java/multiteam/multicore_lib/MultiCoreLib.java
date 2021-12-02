@@ -1,8 +1,8 @@
 package multiteam.multicore_lib;
 
 import multiteam.multicore_lib.setup.example.Registration;
-import multiteam.multicore_lib.setup.utilities.render.ClientItemTooltipComponent;
-import multiteam.multicore_lib.setup.utilities.render.ItemTooltipComponent;
+import multiteam.multicore_lib.setup.utilities.render.tooltip.ClientItemTooltipComponent;
+import multiteam.multicore_lib.setup.utilities.render.tooltip.ItemTooltipComponent;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;

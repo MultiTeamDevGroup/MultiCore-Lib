@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities.render;
+package multiteam.multicore_lib.setup.utilities.render.tooltip;
 
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;

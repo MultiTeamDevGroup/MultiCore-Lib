@@ -1,4 +1,4 @@
-package multiteam.multicore_lib.setup.utilities.render;
+package multiteam.multicore_lib.setup.utilities.render.tooltip;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.Font;

@@ -1,5 +1,5 @@
 
-![Arcadia Logo](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/main/src/main/resources/multicore_lib_logo.png)
+![MultiCoreLib Logo](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/main/src/main/resources/multicore_lib_logo.png)
 ### for Forge 1.18 - by MultiTeam
 
 ## About

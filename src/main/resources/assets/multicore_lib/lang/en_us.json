@@ -2,7 +2,9 @@
   "itemGroup.multicore_lib_examples_tab":"MultiCoreLib Examples",
 
   "item.multicore_lib.hover_text_item_example": "Hover Text Item Example",
-  "tooltip.multicore_lib.hover_text_item_example_description":"Brown",
+  "item.multicore_lib.hover_text_item_example2": "Hover Text Item Example 2",
+  "tooltip.multicore_lib.hover_text_item_example_description":"row or column of items",
+  "tooltip.multicore_lib.hover_text_item_example2_description":"Rows with items and text",
   "item.multicore_lib.teleport_tool_example": "TeleportTool Example",
   "tooltip.multicore_lib.teleport_tool_example_description": "Right click with this on a block. Boom you're teleported!"
 }

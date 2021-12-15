@@ -15,6 +15,7 @@ public class ExampleModItems {
 
 
     public static final RegistryObject<Item> HOVERTEXTITEM_EXAMPLE = Registration.ITEMS.register("hover_text_item_example", () -> new HoverTextItemExampleItem(new Item.Properties().tab(MCL_EXAMPLES_TAB)));
+    public static final RegistryObject<Item> HOVERTEXTITEM_EXAMPLE2 = Registration.ITEMS.register("hover_text_item_example2", () -> new HoverTextItemExample2Item(new Item.Properties().tab(MCL_EXAMPLES_TAB)));
     public static final RegistryObject<Item> TELEPORTTOOL_EXAMPLE = Registration.ITEMS.register("teleport_tool_example", () -> new TeleportToolExample(new Item.Properties().tab(MCL_EXAMPLES_TAB)));
 
 

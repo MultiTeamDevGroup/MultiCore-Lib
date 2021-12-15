@@ -1,7 +1,7 @@
 package multiteam.multicore_lib.setup.example.main.item;
 
 import multiteam.multicore_lib.MultiCoreLib;
-import multiteam.multicore_lib.setup.utilities.render.tooltip.ItemTooltipComponent;
+import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemTooltipComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -31,6 +31,6 @@ public class HoverTextItemExampleItem extends Item {
 
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
-        return Optional.of(new ItemTooltipComponent(new ItemStack(Items.APPLE)));
+        return Optional.of(new ItemTooltipComponent(List.of(new ItemStack(Items.APPLE),new ItemStack(Items.GOLD_INGOT)), ItemTooltipComponent.ArrayRenderOption.ROW));
     }
 }

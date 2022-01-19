@@ -31,6 +31,8 @@ public class HoverTextItemExampleItem extends Item {
 
     @Override
     public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
-        return Optional.of(new ItemTooltipComponent(List.of(new ItemStack(Items.APPLE),new ItemStack(Items.GOLD_INGOT)), ItemTooltipComponent.ArrayRenderOption.ROW));
+        ItemStack appleStack = new ItemStack(Items.APPLE);
+        appleStack.setCount(12);
+        return Optional.of(new ItemTooltipComponent(List.of(appleStack, appleStack, appleStack, appleStack), ItemTooltipComponent.ArrayRenderOption.ROW));
     }
 }

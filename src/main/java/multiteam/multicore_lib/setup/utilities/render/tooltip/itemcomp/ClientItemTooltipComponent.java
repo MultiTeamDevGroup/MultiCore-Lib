@@ -47,8 +47,14 @@ public class ClientItemTooltipComponent implements ClientTooltipComponent {
 
         for (int i = 0; i < this.displayStack.size(); i++){
             switch (this.renderOption){
-                case ROW -> renderer.renderAndDecorateItem(this.displayStack.get(i), posX + (i*18), posY-2, 0);
-                case COLUMN -> renderer.renderAndDecorateItem(this.displayStack.get(i), posX, posY + (i*16), 0);
+                case ROW -> {
+                    renderer.renderAndDecorateItem(this.displayStack.get(i), posX + (i*18), posY-2, 0);
+                    renderer.renderGuiItemDecorations(font, this.displayStack.get(i),posX + (i*18), posY-2);
+                }
+                case COLUMN -> {
+                    renderer.renderAndDecorateItem(this.displayStack.get(i), posX, posY + (i*16), 0);
+                    renderer.renderGuiItemDecorations(font, this.displayStack.get(i),posY + (i*16), 0);
+                }
             }
 
         }

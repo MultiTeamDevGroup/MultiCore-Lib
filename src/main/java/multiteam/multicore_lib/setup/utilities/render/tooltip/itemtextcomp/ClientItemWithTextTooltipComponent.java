@@ -43,7 +43,8 @@ public class ClientItemWithTextTooltipComponent implements ClientTooltipComponen
 
         for (int i = 0; i < this.displayCompoundRows.size(); i++){
             for (int i2 = 0; i2 < this.displayCompoundRows.get(i).dispStackArray.size(); i2++){
-                renderer.renderAndDecorateItem(this.displayCompoundRows.get(i).dispStackArray.get(i2), posX + (i2*18), posY + (i*16) - 2, 0);
+                renderer.renderAndDecorateItem(this.displayCompoundRows.get(i).dispStackArray.get(i2), posX + (i2*18), posY + (i*16) - 2, 1);
+                renderer.renderGuiItemDecorations(font, this.displayCompoundRows.get(i).dispStackArray.get(i2),posX + (i2*18), posY + (i*16) - 2 );
             }
         }
 

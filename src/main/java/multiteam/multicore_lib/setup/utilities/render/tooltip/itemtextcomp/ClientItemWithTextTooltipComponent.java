@@ -2,12 +2,10 @@ package multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Matrix4f;
-import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemTooltipComponent;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.network.chat.TranslatableComponent;
 
 import java.util.List;
 
@@ -55,6 +53,7 @@ public class ClientItemWithTextTooltipComponent implements ClientTooltipComponen
 
         for (int i = 0; i < this.displayCompoundRows.size(); i++){
             font.drawInBatch(this.displayCompoundRows.get(i).dispText, posX + (this.displayCompoundRows.get(i).dispStackArray.size()*18), posY + 3 + (i*16), 1, true, matrix4f, bufferSource, true, 1, 1);
+
         }
 
     }

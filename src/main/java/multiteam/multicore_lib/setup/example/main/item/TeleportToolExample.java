@@ -4,17 +4,14 @@ import multiteam.multicore_lib.MultiCoreLib;
 import multiteam.multicore_lib.setup.utilities.generic.TeleportTool;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -27,7 +24,7 @@ public class TeleportToolExample extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(new TranslatableComponent("tooltip." + MultiCoreLib.MOD_ID + ".teleport_tool_example_description").withStyle(Style.EMPTY.withColor(15403382)));
+        tooltip.add(Component.translatable("tooltip." + MultiCoreLib.MOD_ID + ".teleport_tool_example_description").withStyle(Style.EMPTY.withColor(15403382)));
     }
 
 

@@ -5,7 +5,6 @@ import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemToolt
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp.ItemWithTextTooltipComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +25,8 @@ public class HoverTextItemExample2Item extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(new TranslatableComponent("tooltip." + MultiCoreLib.MOD_ID + ".hover_text_item_example2_description").withStyle(Style.EMPTY.withColor(6497792)));
+        tooltip.add(Component.translatable("tooltip." + MultiCoreLib.MOD_ID + ".hover_text_item_example2_description").withStyle(Style.EMPTY.withColor(6497792)));
+
     }
 
 
@@ -39,13 +39,13 @@ public class HoverTextItemExample2Item extends Item {
         return Optional.of(new ItemWithTextTooltipComponent(List.of(
                 new ItemWithTextTooltipComponent.ItemTextCompoundRow(List.of(
                         appleStack
-                ), (TranslatableComponent) new TranslatableComponent("Row 1").withStyle(Style.EMPTY.withColor(0xffffff))),
+                ), Component.translatable("Row 1").withStyle(Style.EMPTY.withColor(0xffffff))),
                 new ItemWithTextTooltipComponent.ItemTextCompoundRow(List.of(
                         new ItemStack(Items.APPLE),appleStack
-                ), (TranslatableComponent) new TranslatableComponent("Row 2").withStyle(Style.EMPTY.withColor(0xffffff))),
+                ), Component.translatable("Row 2").withStyle(Style.EMPTY.withColor(0xffffff))),
                 new ItemWithTextTooltipComponent.ItemTextCompoundRow(List.of(
                         new ItemStack(Items.APPLE),appleStack,appleStack,new ItemStack(Items.APPLE)
-                ),(TranslatableComponent) new TranslatableComponent("Row 3").withStyle(Style.EMPTY.withColor(0xffffff)))
+                ),Component.translatable("Row 3").withStyle(Style.EMPTY.withColor(0xffffff)))
             )
         ));
     }

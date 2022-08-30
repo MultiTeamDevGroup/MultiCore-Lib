@@ -4,7 +4,7 @@ import multiteam.multicore_lib.MultiCoreLib;
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemTooltipComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +25,7 @@ public class HoverTextItemExampleItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(new TranslatableComponent("tooltip." + MultiCoreLib.MOD_ID + ".hover_text_item_example_description").withStyle(Style.EMPTY.withColor(6497792)));
+        tooltip.add(Component.translatable("tooltip." + MultiCoreLib.MOD_ID + ".hover_text_item_example_description").withStyle(Style.EMPTY.withColor(6497792)));
     }
 
 

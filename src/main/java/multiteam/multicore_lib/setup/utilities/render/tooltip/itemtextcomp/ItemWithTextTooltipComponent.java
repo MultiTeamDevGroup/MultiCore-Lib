@@ -1,6 +1,6 @@
 package multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp;
 
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 
@@ -12,9 +12,9 @@ public class ItemWithTextTooltipComponent implements TooltipComponent {
 
     public static class ItemTextCompoundRow{
         public List<ItemStack> dispStackArray;
-        public TranslatableComponent dispText;
+        public Component dispText;
 
-        public ItemTextCompoundRow(List<ItemStack> displayStack, TranslatableComponent displayText){
+        public ItemTextCompoundRow(List<ItemStack> displayStack, Component displayText){
             this.dispStackArray = displayStack;
             this.dispText = displayText;
         }

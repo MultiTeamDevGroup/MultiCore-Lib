@@ -5,10 +5,7 @@ import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ClientIte
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemTooltipComponent;
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp.ClientItemWithTextTooltipComponent;
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp.ItemWithTextTooltipComponent;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -41,8 +38,6 @@ public class MultiCoreLib {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-        MinecraftForgeClient.registerTooltipComponentFactory(ItemTooltipComponent.class, ClientItemTooltipComponent::new);
-        MinecraftForgeClient.registerTooltipComponentFactory(ItemWithTextTooltipComponent.class, ClientItemWithTextTooltipComponent::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -59,9 +54,6 @@ public class MultiCoreLib {
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
 
-        }
     }
 }

@@ -19,7 +19,7 @@ public static final ItemGroupTool TAB_REFERENCE_NAME = new ItemGroupTool(String 
 
 
 ### [ItemTooltipComponent](https://github.com/MultiTeamDevGroup/MultiCore-Lib/blob/1.18/src/main/java/multiteam/multicore_lib/setup/example/main/item/HoverTextItemExampleItem.java#L34)
-![Hover Text Item Example Image](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/1.18/example/HoverTextItemExample.png)
+![Hover Text Item Example Image](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/1.19.2/example/HoverTextItemExample.png)
 
 This example item shows how to add an item into the tooltip of an item.
 Just simply override the getTooltipImage() function within your item class, and return a new ItemTooltipComponent. You can define the item for the tooltip component in many ways, we here just insert a new apple item
@@ -31,6 +31,8 @@ public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
 }
 ```
 If you want to add an item tooltip component to an item that is already made (you don't have access to its class), just subscribe to the RenderTooltipEvent.GatherComponents event, and check if the item is what you want to modify, and if so just add a new ItemTooltipComponent, like so:
+
+!UNTESTED IN 1.19.2
 ```java
 @SubscribeEvent
 public static void gatherTooltips(RenderTooltipEvent.GatherComponents event) {

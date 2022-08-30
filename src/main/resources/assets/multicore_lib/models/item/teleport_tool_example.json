@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "multicore_lib:item/teleport_tool_example"
+  }
+}

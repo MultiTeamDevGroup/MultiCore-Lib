@@ -10,11 +10,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 
-@Mod.EventBusSubscriber(modid = MultiCoreLib.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = MultiCoreLib.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EventHandler {
 
     @SubscribeEvent
-    public static void registerTooltipsEvent(RegisterClientTooltipComponentFactoriesEvent event){
+    public static void registerClientTooltipsEvent(RegisterClientTooltipComponentFactoriesEvent event){
         event.register(ItemTooltipComponent.class, ClientItemTooltipComponent::new);
         event.register(ItemWithTextTooltipComponent.class, ClientItemWithTextTooltipComponent::new);
 

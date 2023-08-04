@@ -6,6 +6,7 @@ import multiteam.multicore_lib.setup.utilities.render.tooltip.itemcomp.ItemToolt
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp.ClientItemWithTextTooltipComponent;
 import multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp.ItemWithTextTooltipComponent;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -18,6 +19,11 @@ public class EventHandler {
         event.register(ItemTooltipComponent.class, ClientItemTooltipComponent::new);
         event.register(ItemWithTextTooltipComponent.class, ClientItemWithTextTooltipComponent::new);
 
+    }
+
+    @SubscribeEvent
+    public static void buildCreativeModeTabContents(BuildCreativeModeTabContentsEvent event){
+        event.getTab().
     }
 
 }

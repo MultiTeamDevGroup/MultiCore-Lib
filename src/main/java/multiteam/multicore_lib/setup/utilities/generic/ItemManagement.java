@@ -4,7 +4,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class ItemManagementTool {
+public class ItemManagement {
 
     //Returns the count of a specific item in an inventory/container.
     //Note that if there's multiple stacks of items, it will count them all, so the return might result in bigger amounts than 64.

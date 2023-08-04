@@ -1,8 +1,10 @@
 package multiteam.multicore_lib.setup.utilities.generic;
 
-import com.mojang.math.Vector3f;
+import org.joml.Vector3f;
 
-public class MathF { //Why MathF? Because in unity, there was a class with Mathematical functions, and i grown quiet fond of this name. In the honor of my C# past, you shall now be named MathF!
+//LAZ: Why MathF? Because in unity, there was a class with Mathematical functions, and i grown quiet fond of this name. In the honor of my C# past, you shall now be named MathF!
+//QBOI: I respect that, I will leave this name. But still package names are weird bro.
+public class MathF {
 
     /**
      * Calculates a number in between two scales.
@@ -43,14 +45,9 @@ public class MathF { //Why MathF? Because in unity, there was a class with Mathe
     /**
      * Clamps a value between two limits
      **/
+    @SuppressWarnings("ManualMinMaxCalculation")
     public static int clampInt(int input, int min, int max){
-        if(input > max){
-            return max;
-        }
-        if(input < min){
-            return min;
-        }
-        return input;
+        return input > max ? max : input < min ? min : input;
     }
 
 }

@@ -1,11 +1,11 @@
 package multiteam.multicore_lib.setup.utilities.render.tooltip.itemtextcomp;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Matrix4f;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.ItemRenderer;
+import org.jetbrains.annotations.NotNull;
+import org.joml.Matrix4f;
 
 import java.util.List;
 
@@ -24,35 +24,35 @@ public class ClientItemWithTextTooltipComponent implements ClientTooltipComponen
     }
 
     @Override
-    public int getWidth(Font font) {
+    public int getWidth(@NotNull Font font) {
         int ret = 0;
-        for (int i = 0; i < this.displayCompoundRows.size(); i++){
-            int a = font.width(displayCompoundRows.get(i).dispText);
-            int b = this.displayCompoundRows.get(i).dispStackArray.size() * 18;
-            if(a+b > ret){
-                ret = a+b;
+        for (ItemWithTextTooltipComponent.ItemTextCompoundRow displayCompoundRow : this.displayCompoundRows) {
+            int a = font.width(displayCompoundRow.dispText);
+            int b = displayCompoundRow.dispStackArray.size() * 18;
+            if (a + b > ret) {
+                ret = a + b;
             }
         }
         return ret+18;
     }
 
     @Override
-    public void renderImage(Font font, int posX, int posY, PoseStack poseStack, ItemRenderer renderer, int zIndex) {
+    public void renderImage(@NotNull Font font, int posX, int posY, @NotNull GuiGraphics gfx /* Sponsored by Opera GX */) {
 
         for (int i = 0; i < this.displayCompoundRows.size(); i++){
             for (int i2 = 0; i2 < this.displayCompoundRows.get(i).dispStackArray.size(); i2++){
-                renderer.renderAndDecorateItem(this.displayCompoundRows.get(i).dispStackArray.get(i2), posX + (i2*18), posY + (i*16) - 2, 1);
-                renderer.renderGuiItemDecorations(font, this.displayCompoundRows.get(i).dispStackArray.get(i2),posX + (i2*18), posY + (i*16) - 2 );
+                gfx.renderItem(this.displayCompoundRows.get(i).dispStackArray.get(i2), posX + (i2*18), posY + (i*16) - 2, 1);
+                gfx.renderItemDecorations(font, this.displayCompoundRows.get(i).dispStackArray.get(i2),posX + (i2*18), posY + (i*16) - 2 );
             }
         }
 
     }
 
     @Override
-    public void renderText(Font font, int posX, int posY, Matrix4f matrix4f, MultiBufferSource.BufferSource bufferSource) {
+    public void renderText(@NotNull Font font, int posX, int posY, @NotNull Matrix4f matrix4f, MultiBufferSource.@NotNull BufferSource bufferSource) {
 
         for (int i = 0; i < this.displayCompoundRows.size(); i++){
-            font.drawInBatch(this.displayCompoundRows.get(i).dispText, posX + (this.displayCompoundRows.get(i).dispStackArray.size()*18), posY + 3 + (i*16), 1, true, matrix4f, bufferSource, true, 1, 1);
+            font.drawInBatch(this.displayCompoundRows.get(i).dispText, posX + (this.displayCompoundRows.get(i).dispStackArray.size()*18), posY + 3 + (i*16), 1, true, matrix4f, bufferSource, Font.DisplayMode.NORMAL, 1, 1);
 
         }
 

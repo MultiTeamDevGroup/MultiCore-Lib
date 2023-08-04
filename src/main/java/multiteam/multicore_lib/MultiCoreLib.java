@@ -38,9 +38,11 @@ public class MultiCoreLib {
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
+
     }
 
     private void processIMC(final InterModProcessEvent event) {

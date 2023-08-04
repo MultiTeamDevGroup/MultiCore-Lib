@@ -8,8 +8,7 @@ import net.minecraftforge.common.util.ITeleporter;
 
 import java.util.function.Function;
 
-public class TeleportTool {
-
+public class TeleportUtils {
     public static void teleportPlayerTo(ServerPlayer targetPlayer, ServerLevel destinationLevel, BlockPos destinationBlockPos) {
         targetPlayer.changeDimension(destinationLevel, new ITeleporter() {
             @Override
@@ -20,5 +19,4 @@ public class TeleportTool {
             }
         });
     }
-
 }

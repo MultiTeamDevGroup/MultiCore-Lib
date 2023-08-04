@@ -1,7 +1,7 @@
 package multiteam.multicore_lib.setup.example.main.item;
 
 import multiteam.multicore_lib.MultiCoreLib;
-import multiteam.multicore_lib.setup.utilities.generic.TeleportTool;
+import multiteam.multicore_lib.setup.utilities.generic.TeleportUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerLevel;
@@ -31,7 +31,7 @@ public class TeleportToolExample extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if(!context.getLevel().isClientSide){
-            TeleportTool.teleportPlayerTo((ServerPlayer) context.getPlayer(), (ServerLevel) context.getLevel(), context.getClickedPos());
+            TeleportUtils.teleportPlayerTo((ServerPlayer) context.getPlayer(), (ServerLevel) context.getLevel(), context.getClickedPos());
         }
         return InteractionResult.SUCCESS;
     }

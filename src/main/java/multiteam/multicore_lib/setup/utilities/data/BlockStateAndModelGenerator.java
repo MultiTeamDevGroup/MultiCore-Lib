@@ -1,6 +1,6 @@
 package multiteam.multicore_lib.setup.utilities.data;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
@@ -10,12 +10,11 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockStateAndModelGenerator extends BlockStateProvider {
+    private final String modId;
 
-    public String MODID;
-
-    public BlockStateAndModelGenerator(DataGenerator gen, String modId, ExistingFileHelper exFileHelper) {
+    public BlockStateAndModelGenerator(PackOutput gen, String modId, ExistingFileHelper exFileHelper) {
         super(gen, modId, exFileHelper);
-        this.MODID = modId;
+        this.modId = modId;
     }
 
     /**
@@ -40,7 +39,7 @@ public class BlockStateAndModelGenerator extends BlockStateProvider {
     }
 
     public ResourceLocation texure(String textureName){
-        return new ResourceLocation(MODID+":block/"+textureName);
+        return new ResourceLocation(modId +":block/"+textureName);
     }
 
     public void blockBaseSlabStairSet(String name, Block block, Block slab, Block stair){

@@ -11,7 +11,7 @@ public class ItemGroupTool extends CreativeModeTab {
     public Supplier<ItemStack> displayStack;
 
     public ItemGroupTool(String label, Supplier<ItemStack> displayStack) {
-        super(label);
+        super(builder().); // WELP I GITHUB UP
         this.displayStack = displayStack;
     }
 

@@ -1,10 +1,10 @@
 package multiteam.multicore_lib.setup.utilities.render;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Matrix3f;
-import com.mojang.math.Matrix4f;
-import com.mojang.math.Vector3f;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import org.joml.Matrix3f;
+import org.joml.Matrix4f;
+import org.joml.Vector3f;
 
 public class RenderingTool {
 

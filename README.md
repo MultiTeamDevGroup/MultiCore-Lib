@@ -1,4 +1,3 @@
-
 ![MultiCoreLib Logo](https://raw.githubusercontent.com/MultiTeamDevGroup/MultiCore-Lib/main/src/main/resources/multicore_lib_logo.png)
 ### for Forge 1.20.1 - by MultiTeam
 
@@ -28,7 +27,7 @@ If you want to be part of our community, join the discord server!
        url "https://jitpack.io/"
    }
    ```
-2. Then add the dependency: *Replace `<mc_version>` with the minecraft version you're using; Replace `<lib_version>` with the version of the mod you'd like to use* - you can find the versions [[here]](https://github.com/MultiTeamDevGroup/MultiTeam-Maven/tree/main/multiteam/multicorelib/MultiCore-Lib)
+2. Then add the dependency: *Replace `<version>` with the version of the mod you'd like to use* - you can find the versions [[here]](https://jitpack.io/#MultiTeamDevGroup/MultiCore-Lib)
    ```gradle
    implementation fg.deobf("'com.github.MultiTeamDevGroup:MultiCore-Lib:<version>")
    ```
